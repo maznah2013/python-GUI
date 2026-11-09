@@ -10,7 +10,7 @@ def name_confirm():
 
 def number_confirm():
     user_number=guess_box.get()
-    user_number=int(number)
+    user_number=int(user_number)
     if user_number==number:
         tkinter.messagebox.showinfo("correct", "Good job, you guessed the number!")
     elif user_number>number:
