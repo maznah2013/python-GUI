@@ -1,8 +1,17 @@
 from tkinter import *
 from tkinter import ttk
 
+
+def generate_table():
+    tables=""
+    for i in range(1,end_val.get()+1):
+        mult=i*num.get()
+        tables+=f"{num.get()} x {i} = {mult}\n"
+    display_lbl.configure(text=tables)
+
+
 root=Tk()
-root.geometry("500x800")
+root.geometry("500x1000")
 root.configure(bg="white")
 root.title("Multiplication Table")
 
@@ -29,10 +38,10 @@ r30=Radiobutton(root,text="30",variable=end_val,value=30,bg="white",fg="black")
 r30.place(x=350,y=150)
 end_val.set(10)
 
-generate_btn=Button(root,text="GENERATE",bg="#3027BA",fg="black",font=("Arial","18"))
+generate_btn=Button(root,text="GENERATE",bg="#3027BA",fg="black",font=("Arial","18"),command=generate_table)
 generate_btn.place(x=200,y=200)
 
-display_lbl=Label(root,text="",bg="white",fg="black",font=("Arial","18"))
+display_lbl=Label(root,text="",bg="white",fg="black",font=("Arial","15","bold"))
 display_lbl.place(x=200,y=250)
 
 root.mainloop()
